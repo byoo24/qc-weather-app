@@ -1,0 +1,58 @@
+
+.screen-week {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    padding: 1em;
+    background: rgb(204,204,204);
+    background: linear-gradient(45deg, rgba(204,204,204,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+@media screen and (min-width: 1700px) {
+    .screen-week {
+        font-size: 1em;
+    }
+}
+
+
+@media screen and (min-width: 2000px) {
+    .screen-week {
+        font-size: 1.25em;
+    }
+}
+
+.screen-week div:nth-child(2n) {
+    background: #fff;
+}
+
+
+
+.daily {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 2em;
+    width: 9em;
+    height: 15em;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.daily-img {
+    width: 100%;
+}
+
+
+.daily-temp-high,
+.daily-temp-low {
+    margin-bottom: 0.35em;
+}
+
+
+.daily-temp-high::after,
+.daily-temp-low::after {
+    content: "\00b0";
+    position: absolute;
+}

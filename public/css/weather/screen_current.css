@@ -1,0 +1,47 @@
+
+/* Screen One */
+.screen-current {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5em;
+    background: rgba(242,242,242,1);
+    background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(204,204,204,1) 100%);
+}
+
+.current-date {
+    font-size: 4em;
+    margin: 0;
+}
+
+.current-img {
+    width: 20em;
+}
+
+.current-temp {
+    font-size: 6em;
+    margin-left: -0.25em;
+}
+
+.current-temp::after {
+    content: "\00b0";
+    position: absolute;
+}
+
+.current-summary,
+.current-humidity,
+.current-wind {
+    display: block;
+    font-size: 1.25em;
+    margin: 0 2em;
+}
+
+
+.summary {
+    font-size: 1.5em;
+    margin: 2em 0;
+    line-height: 1.25em;
+    text-align: center;
+    width: 75%;
+}

@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,500&display=swap');
+@import './weather/reset.css';
+@import './weather/screen_current.css';
+@import './weather/screen_week.css';
+@import './weather/footer.css';
+@import './lib/animate.css';
+
+body {
+    font-size: 18px;
+    font-family: 'Roboto', 'sans-serif';
+    font-weight: 300;
+}
+
+@media screen and (min-width: 1920px) {
+    body {
+        font-size: 1.25em;
+    }
+}
+
+
+
+.weather-container {
+    display: flex;
+}
+
+.horizontal-two {
+    flex-direction: row;
+}
+
+.vertical-two {
+    flex-direction: column;
+}
+
+
+.vertical-two .screen-current,
+.vertical-two .screen-week,
+.horizontal-two .screen-current,
+.horizontal-two .screen-week {
+    box-sizing: border-box;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+}
+
+.vertical-two .screen-current,
+.vertical-two .screen-week {
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.horizontal-two .screen-current,
+.horizontal-two .screen-week {
+    width: 50vw;
+    min-height: 100vh;
+}
+
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
