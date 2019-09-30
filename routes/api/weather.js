@@ -5,6 +5,12 @@ const geocode = require('../utils/geocode');
 const forecast = require('../utils/forecast');
 
 
+router.get('', (req, res) => {
+    return res.json(req.query);
+    // console.log(req);
+});
+
+
 router.post('', (req, res) => {
     const { address } = req.body;
 

@@ -25,7 +25,7 @@ const weekday = {
 
 
 
-const htmlCurrentWeather = (currently, mainSummary) => {
+export const htmlCurrentWeather = (currently, mainSummary) => {
     const { time, icon, temperature, humidity, windSpeed, summary } = currently;
 
     const dateData = new Date(time * 1000);
@@ -100,7 +100,7 @@ const htmlCurrentWeather = (currently, mainSummary) => {
 
 
 
-const htmlWeekWeather = (daily) => {
+export const htmlWeekWeather = (daily) => {
     const screen = document.querySelector('.screen-week');
     const { data } = daily;
 
