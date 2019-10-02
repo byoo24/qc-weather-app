@@ -6,50 +6,32 @@
 @import './lib/animate.css';
 
 body {
-    font-size: 18px;
     font-family: 'Roboto', 'sans-serif';
     font-weight: 300;
 }
 
-@media screen and (min-width: 1920px) {
-    body {
-        font-size: 1.25em;
-    }
-}
-
-
 
 .weather-container {
     display: flex;
-}
-
-.horizontal-two {
     flex-direction: row;
-}
-
-.vertical-two {
-    flex-direction: column;
-}
-
-
-.vertical-two .screen-current,
-.vertical-two .screen-week,
-.horizontal-two .screen-current,
-.horizontal-two .screen-week {
-    box-sizing: border-box;
     flex-grow: 0;
     flex-shrink: 0;
-    flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
-.vertical-two .screen-current,
-.vertical-two .screen-week {
-    width: 100vw;
-    min-height: 100vh;
+.sunrise {
+    color:black;
+    background: linear-gradient(135deg, rgba(145, 200, 255, 1) 0%, rgba(255,255,255,1) 100%);
 }
 
-.horizontal-two .screen-current,
-.horizontal-two .screen-week {
+.sunset {
+    color: white;
+    background: linear-gradient(135deg, rgb(11, 49, 86) 0%, rgb(140, 140, 140) 100%);
+}
+
+
+.screen-current,
+.screen-week {
     width: 50vw;
     min-height: 100vh;
 }

@@ -2,6 +2,7 @@ require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
 const { htmlCurrentWeather, htmlWeekWeather } = require('./utils/weather');
+const weather_container = document.querySelector('.weather-container');
 
 
 const weatherForm = document.querySelector('#settings-form');
@@ -12,19 +13,19 @@ const STATE = {
 }
 
 const CONSTANTS = {
-    INTERVAL: 1200000   // 20 minutes
+    INTERVAL: 1800000   // 30 minutes
 }
 
 
 
 // Fetches Data and Sets STATE
 const fetchData = () => {
-    const address = "Queens College, New York";
+    const address = document.querySelector('[name="address"]');
 
     fetch('/api/v1/weather', {
         method: 'POST',
         body: JSON.stringify({
-            address: address
+            address: address.value
         }),
         headers: {
             'Content-Type': 'application/json'
@@ -38,6 +39,19 @@ const fetchData = () => {
         STATE.currently = currently;
         STATE.daily = daily;
         STATE.geoData = geoData;
+
+
+        const { sunriseTime, sunsetTime } = daily.data[0];
+        const currentTime = Date.now();
+
+        if (currentTime < sunsetTime * 1000) {
+            weather_container.classList.remove('sunset');
+            weather_container.classList.add('sunrise');
+        } else {
+            weather_container.classList.remove('sunrise');
+            weather_container.classList.add('sunset');
+        }
+
 
         htmlCurrentWeather(currently, daily.summary);
         htmlWeekWeather(daily);

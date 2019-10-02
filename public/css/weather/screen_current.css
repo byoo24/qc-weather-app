@@ -5,22 +5,19 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 5em;
-    background: rgba(242,242,242,1);
-    background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(204,204,204,1) 100%);
 }
 
 .current-date {
-    font-size: 4em;
+    font-size: 2em;
     margin: 0;
 }
 
 .current-img {
-    width: 20em;
+    width: 10em;
 }
 
 .current-temp {
-    font-size: 6em;
+    font-size: 3em;
     margin-left: -0.25em;
 }
 
@@ -33,13 +30,11 @@
 .current-humidity,
 .current-wind {
     display: block;
-    font-size: 1.25em;
     margin: 0 2em;
 }
 
 
 .summary {
-    font-size: 1.5em;
     margin: 2em 0;
     line-height: 1.25em;
     text-align: center;
