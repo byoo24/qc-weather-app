@@ -68,6 +68,7 @@ weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
     clearInterval(timer);
+    fetchData();
     timer = setInterval(() => fetchData(), CONSTANTS.INTERVAL);
 });
 

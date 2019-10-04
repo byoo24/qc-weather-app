@@ -171,7 +171,6 @@ export const htmlWeekWeather = (daily) => {
     }
 
     for (let i = 1; i < 6; i++) {
-        const delay = 100 * i;
         const day = data[i];
         const { icon, temperatureHigh, temperatureLow, time, summary } = day;
 
@@ -180,7 +179,8 @@ export const htmlWeekWeather = (daily) => {
 
         // Create upcoming forecast
         const div = document.createElement('div');
-            div.classList.add('daily', 'animated', 'fadeInRight');
+            const animationDelay = `delay${i}`
+            div.classList.add('daily', 'animated', animationDelay, 'fadeInRight');
         const h1 = document.createElement('h1');
             h1.classList.add('daily-day');
             h1.innerText = getWeekday[date.getDay()];
@@ -203,8 +203,6 @@ export const htmlWeekWeather = (daily) => {
         div.appendChild(span1);
         div.appendChild(span2);
 
-        setTimeout(() => {
-            screen.appendChild(div);
-        }, delay);
+        screen.appendChild(div);
     }
 }

@@ -10,6 +10,10 @@ body {
     font-weight: 300;
 }
 
+#weather-app {
+    overflow: hidden;
+}
+
 
 .weather-container {
     display: flex;
